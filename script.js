@@ -13,3 +13,4 @@ function sclock() {
     s.style.transform = `rotate(${6 * seconds}deg)`;
 }
 setInterval(sclock, 1000);
+//
