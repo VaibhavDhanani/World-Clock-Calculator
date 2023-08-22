@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="clock">
-        <div class="needle hr" style="--h:60px; --clr:red"><span></span></div>
-        <div class="needle mn" style="--h:80px; --clr:blue"><span></span></div>
-        <div class="needle ss" style="--h:100px; --clr:white"><span></span></div>
-        <ul>
-            <li style="--i:1"><span>1</span></li>
-            <li style="--i:2"><span>2</span></li>
-            <li style="--i:3"><span>3</span></li>
-            <li style="--i:4"><span>4</span></li>
-            <li style="--i:5"><span>5</span></li>
-            <li style="--i:6"><span>6</span></li>
-            <li style="--i:7"><span>7</span></li>
-            <li style="--i:8"><span>8</span></li>
-            <li style="--i:9"><span>9</span></li>
-            <li style="--i:10"><span>10</span></li>
-            <li style="--i:11"><span>11</span></li>
-            <li style="--i:12"><span>12</span></li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analog Clock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dropdown-container" >
+      <label for="timeZoneSelect">Select Time Zone:</label>
+      <select id="timeZoneSelect">
+        <option name="Asia/Kolkata" value="0" selected>India</option>
+        <option name="America/New_York" value="1">New York</option>
+        <option name="America/Los_Angeles" value="2">Los_Angles</option>
+        <option name="Europe/London" value="3">London</option>
+        <option name="Europe/Berlin" value="4">Berlin</option>
+        <option name="Asia/Tokyo" value="5">Tokyo</option>
+        
+      </select>
     </div>
-
+    <div class="clock">
+      <div class="needle hr" style="--h: 60px; --clr: red"><span></span></div>
+      <div class="needle mn" style="--h: 80px; --clr: blue"><span></span></div>
+      <div class="needle ss" style="--h: 100px; --clr: white"><span></span></div>
+      <ul>
+        <li style="--i: 1"><span>1</span></li>
+        <li style="--i: 2"><span>2</span></li>
+        <li style="--i: 3"><span>3</span></li>
+        <li style="--i: 4"><span>4</span></li>
+        <li style="--i: 5"><span>5</span></li>
+        <li style="--i: 6"><span>6</span></li>
+        <li style="--i: 7"><span>7</span></li>
+        <li style="--i: 8"><span>8</span></li>
+        <li style="--i: 9"><span>9</span></li>
+        <li style="--i: 10"><span>10</span></li>
+        <li style="--i: 11"><span>11</span></li>
+        <li style="--i: 12"><span>12</span></li>
+      </ul>
+    </div>
+    <div class="digital"></div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>World Clock</title>
+  </head>
+  <body>
+    <div class="clock-container">
+      <div class="clock">
+        <div class="hr"></div>
+        <div class="mn"></div>
+        <div class="ss"></div>
+        <div class="digital"></div>
+        <div class="time-zones"></div>
+      </div>
+    </div>
+    <div class="dropdown-container">
+      <label for="timeZoneSelect">Select Time Zone:</label>
+      <select id="timeZoneSelect">
+        <option value="America/New_York">New York</option>
+        <option value="Europe/London">London</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+        <!-- Add more options for other time zones -->
+      </select>
+    </div>
+    <script>
+      function sclock() {
+        // Existing clock display logic
+
+        const selectedTimeZone =
+          document.getElementById("timeZoneSelect").value;
+        const selectedTimeOptions = {
+          timeZone: selectedTimeZone,
+          hour: "numeric",
+          minute: "numeric",
+          second: "numeric",
+          hour12: false,
+        };
+        
+        const selectedFormattedTime = new Intl.DateTimeFormat(
+          "en-US",
+          selectedTimeOptions
+        ).format(date);
+        document.getElementsByClassName(
+          "selected-time"
+        )[0].innerHTML = `<p>${selectedFormattedTime}</p>`;
+      }
+
+      setInterval(sclock, 100);
+
+      // Initial call to update time based on selected timezone
+      sclock();
+    </script>
+  </body>
+</html>
