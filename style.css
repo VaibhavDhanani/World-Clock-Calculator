@@ -3,12 +3,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 body {
   background-color: #d9afd9;
   background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
   background-repeat: no-repeat;
-  font-family: "Poppins", sans-serif;
   position: relative;
   display: flex;
   justify-content: center;
@@ -81,8 +81,27 @@ body {
   background-color: aqua;
 }
 .digital p{
-  font-family: "Poppins", sans-serif;
   font-size: 25px;
   font-weight: bolder;
   position: fixed;
+}
+#timeZoneSelect {
+  position: relative;
+  height: 40px;
+  width: 120px;
+  max-height: fit-content;
+  font-size: 20px;
+  border: aqua solid 2px;
+  border-radius: 12px;
+  border-color: aqua;
+  text-align: center;
+  text-emphasis: unset;
+  overflow-y: auto;
+}
+
+#timeZoneSelect option {
+  width: 30px;
+  font-size: 20px;
+  background-color: white;
+  overflow-y: y;
 }
