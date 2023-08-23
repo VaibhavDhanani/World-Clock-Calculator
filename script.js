@@ -45,7 +45,7 @@ const timezones = [
   "Asia/Kolkata",
   "Asia/Baghdad",
 ];
-
+// console.log(timezones.length)
 function getDate(timeZone) {
   const options = {
     timeZone,
@@ -85,13 +85,17 @@ function sclock() {
 
   let date = getDate(timezones[country]);
   let hours = getHours(timezones[country]);
+  let hours_formatted = hours.toString().padStart(2, "0");
   let minutes = getMinutes(timezones[country]);
+  let minutes_formatted = minutes.toString().padStart(2, "0");
   let seconds = getSeconds(timezones[country]);
+  let seconds_formatted = seconds.toString().padStart(2, "0");
+
   let time_period = date.slice(-2);
   h.style.transform = `rotate(${30 * hours + minutes / 2}deg)`;
   m.style.transform = `rotate(${6 * minutes}deg)`;
   s.style.transform = `rotate(${6 * seconds}deg)`;
-  cur.innerHTML = `<p>${hours} : ${minutes} : ${seconds}  ${time_period}</p>`;
+  cur.innerHTML = `<p>${hours_formatted} : ${minutes_formatted} : ${seconds_formatted}  ${time_period}</p>`;
 }
 
 setInterval(sclock, 100);
