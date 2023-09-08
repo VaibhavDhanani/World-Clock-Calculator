@@ -6,33 +6,39 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #d9afd9;
-  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
   background-repeat: no-repeat;
-  position: relative;
+  background-image: url(bg.avif);
+  background-size: cover;
+  background-position: bottom;
+  height: 100vh;
+}
+.container{
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
 .dropdown-container {
-  display: inline;
-  justify-content: left;
-  align-items: center;
-  margin-right: 25px;
+  display: block;
+  margin-left: 32%;
+}
+#zonelabel{
+  font-size: 35px;
+  color: antiquewhite;
 }
 
 .clock {
-  background-color: rgb(49, 47, 47);
+  background-color: rgba(146, 220, 204, 0.929);
   height: 300px;
   width: 300px;
+  margin: 50px 25px;
   border-radius: 50%;
   border: 5px solid white;
   box-shadow: 0px 0px 10px rgba(200, 200, 200, 0.7),
     0px 0px 20px rgba(0, 0, 0, 0.65);
-  color: whitesmoke;
-  font-size: 26px;
+  color: rgba(12, 6, 63, 1);
+  font-size: 28px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +68,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  /* transition: 10ms ease-in-out; */
+  transition: 10ms ease-in-out;
 }
 .needle span {
   width: 5px;
@@ -78,7 +84,12 @@ body {
   margin-left: 52px;
   height: 100px;
   width: 200px;
-  background-color: aqua;
+  border: 2px white solid;
+  border-radius: 20px;
+  background-color: rgba(146, 220, 204, 0.929);
+  box-shadow: 0px 0px 10px rgba(200, 200, 200, 0.7),
+    0px 0px 20px rgba(0, 0, 0, 0.65);
+  color: rgba(12, 6, 63, 1);
 }
 .digital p{
   font-size: 25px;
@@ -91,7 +102,7 @@ body {
   width: 120px;
   max-height: fit-content;
   font-size: 20px;
-  border: aqua solid 2px;
+  border: rgb(51, 0, 255) solid 2px;
   border-radius: 12px;
   border-color: aqua;
   text-align: center;
