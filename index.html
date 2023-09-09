@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="switch">
+      <button class="caltag">Calculator</button>
+      <button class="clocktag">Clock</button>
+    </div>
     <div class="dropdown-container">
-      <label id="zonelabel" for="timeZoneSelect">Select Country : </label>
+      <label id="zonelabel" for="timeZoneSelect">Select Your Country : </label>
       <select id="timeZoneSelect">
         <option name="Asia/Kolkata" value="0" selected>India</option>
         <option name="America/New_York" value="1">New York</option>
@@ -82,7 +86,67 @@
       </div>
       <div class="digital"></div>
     </div>
+    <div class="stopwatch">
+      <div id="time">
+        <span class="digit extra" style="color: antiquewhite; font-size: 35px"
+          >Stop Watch : </span
+        ><br /><br />
+        <span class="digit" id="hr"> 00</span>
+        <span class="txt">Hr</span>
+        <span class="digit" id="min"> 00</span>
+        <span class="txt">Min</span>
+        <span class="digit" id="sec"> 00</span>
+        <span class="txt">Sec</span>
+        <span class="digit" id="count"> 00</span>
+      </div>
+      <div id="buttons">
+        <button class="btn" id="start">Start</button>
+        <button class="btn" id="stop">Stop</button>
+        <button class="btn" id="reset">Reset</button>
+      </div>
+    </div>
 
+    <div class="container2">
+      <div class="calculator">
+        <div class="display">
+          <input type="text" name="display" id="inputbox" placeholder="0" />
+        </div>
+        <div>
+          <input type="button" value="AC" class="operator" />
+          <input type="button" value="DE" class="operator" />
+          <input type="button" name="cube" value="&#8731;" class="operator" />
+          <input type="button" name="sqrt" value="&radic;" class="operator" />
+          <input type="button" value="/" class="operator" />
+        </div>
+        <div>
+          <input type="button" value="7" />
+          <input type="button" value="8" />
+          <input type="button" value="9" />
+          <input type="button" value="sin" class="operator" />
+          <input type="button" value="*" class="operator" />
+        </div>
+        <div>
+          <input type="button" value="4" />
+          <input type="button" value="5" />
+          <input type="button" value="6" />
+          <input type="button" value="cos" class="operator" />
+          <input type="button" value="-" class="operator" />
+        </div>
+        <div>
+          <input type="button" value="1" />
+          <input type="button" value="2" />
+          <input type="button" value="3" />
+          <input type="button" value="tan" class="operator" />
+          <input type="button" value="+" class="operator" />
+        </div>
+        <div>
+          <input type="button" value="00" />
+          <input type="button" value="0" />
+          <input type="button" value="." class="operator" />
+          <input type="button" value="=" class="equal operator" />
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

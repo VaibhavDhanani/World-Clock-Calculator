@@ -99,3 +99,160 @@ function sclock() {
 }
 
 setInterval(sclock, 100);
+
+let startBtn = document.getElementById("start");
+let stopBtn = document.getElementById("stop");
+let resetBtn = document.getElementById("reset");
+
+let hour = 0;
+let minute = 0;
+let second = 0;
+let count = 0;
+
+startBtn.addEventListener("click", function () {
+  timer = true;
+  stopWatch();
+});
+
+stopBtn.addEventListener("click", function () {
+  timer = false;
+});
+
+resetBtn.addEventListener("click", function () {
+  timer = false;
+  hour = 0;
+  minute = 0;
+  second = 0;
+  count = 0;
+  document.getElementById("hr").innerHTML = "00";
+  document.getElementById("min").innerHTML = "00";
+  document.getElementById("sec").innerHTML = "00";
+  document.getElementById("count").innerHTML = "00";
+});
+
+function stopWatch() {
+  if (timer) {
+    count++;
+
+    if (count == 100) {
+      second++;
+      count = 0;
+    }
+
+    if (second == 60) {
+      minute++;
+      second = 0;
+    }
+
+    if (minute == 60) {
+      hour++;
+      minute = 0;
+      second = 0;
+    }
+
+    let hrString = hour;
+    let minString = minute;
+    let secString = second;
+    let countString = count;
+
+    if (hour < 10) {
+      hrString = "0" + hrString;
+    }
+
+    if (minute < 10) {
+      minString = "0" + minString;
+    }
+
+    if (second < 10) {
+      secString = "0" + secString;
+    }
+
+    if (count < 10) {
+      countString = "0" + countString;
+    }
+
+    document.getElementById("hr").innerHTML = hrString;
+    document.getElementById("min").innerHTML = minString;
+    document.getElementById("sec").innerHTML = secString;
+    document.getElementById("count").innerHTML = countString;
+    setTimeout(stopWatch, 10);
+  }
+}
+let input = document.getElementById("inputbox");
+let buttons = document.querySelectorAll("input[type=button]");
+let string = "";
+let arr = Array.from(buttons);
+let calc = document.getElementsByClassName("calculator");
+console.log(calc[0]);
+
+arr.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    try {
+      if (e.target.value == "=") {
+        string = eval(string);
+        input.value = string;
+      } else if (e.target.value == "sin") {
+        let a = (input.value * 3.14) / 180;
+        string = Math.sin(a).toFixed(2);
+        input.value = string;
+      } else if (e.target.value == "cos") {
+        let a = (input.value * 3.14) / 180;
+        string = Math.cos(a).toFixed(2);
+        input.value = string;
+      } else if (e.target.value == "tan") {
+        let a = (input.value * 3.14) / 180;
+        string = Math.tan(a).toFixed(2);
+        input.value = string;
+      } else if (e.target.name == "cube") {
+        let a = input.value;
+        string = Math.pow(a, 1 / 3).toFixed(2);
+        input.value = string;
+      } else if (e.target.name == "sqrt") {
+        let a = input.value;
+        string = Math.pow(a, 1 / 2).toFixed(2);
+        input.value = string;
+      } else if (e.target.value == "AC") {
+        string = "";
+        input.value = string;
+      } else if (e.target.value == "DE") {
+        string = string.substring(0, string.length - 1);
+        input.value = string;
+      } else {
+        string += e.target.value;
+        input.value = string;
+      }
+    } catch (e) {
+      if (e instanceof SyntaxError) {
+        string = "ERROR!";
+        input.value = string;
+      }
+    }
+  });
+});
+
+let clk_btn = document.getElementsByClassName("clocktag")[0];
+let cal_btn = document.getElementsByClassName("caltag")[0];
+
+clk_btn.addEventListener("click", () => {
+  let con1 = document.getElementsByClassName("dropdown-container")[0];
+  let con2 = document.getElementsByClassName("stopwatch")[0];
+  let con3 = document.getElementsByClassName("container")[0];
+  let con4 = document.getElementsByClassName("container2")[0];
+
+  con1.style.display = "block";
+  con2.style.display = "block";
+  con3.style.display = "flex";
+  con4.style.display = "none";
+});
+
+cal_btn.addEventListener("click", () => {
+  let con1 = document.getElementsByClassName("dropdown-container")[0];
+  let con2 = document.getElementsByClassName("stopwatch")[0];
+  let con3 = document.getElementsByClassName("container")[0];
+  let con4 = document.getElementsByClassName("container2")[0];
+
+  con1.style.display = "none";
+  con2.style.display = "none";
+  con3.style.display = "none";
+  con4.style.display = "flex";
+});
