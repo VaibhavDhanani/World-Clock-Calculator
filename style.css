@@ -223,7 +223,7 @@ input::placeholder{
 }
 
 .caltag {
-  background-color: #3a4452;
+  background-color: #007d68;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -234,7 +234,7 @@ input::placeholder{
 }
 
 .caltag:hover {
-  background-color: #007d68;
+  background-color: #3a4452;
 }
 
 .clocktag {
