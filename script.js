@@ -164,6 +164,8 @@ document.getElementById("reset").addEventListener("click", function () {
   document.getElementById("count").innerHTML = "00";
 });
 
+// Calculator 
+
 const input = document.getElementById("inputbox");
 const buttons = document.querySelectorAll("input[type=button]");
 let string = "";
